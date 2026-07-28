@@ -20,11 +20,11 @@ export function SectionHeading({
   return (
     <div className={`max-w-2xl ${alignClass} ${className}`}>
       {eyebrow && (
-        <p className="mb-3 font-body text-xs uppercase tracking-[0.28em] text-gold-deep">
+        <p className="mb-3 font-body text-xs uppercase tracking-[0.28em] text-burgundy">
           {eyebrow}
         </p>
       )}
-      <h2 className="font-display text-3xl font-medium tracking-wide text-ink sm:text-4xl md:text-5xl">
+      <h2 className="font-display text-3xl font-medium tracking-wide text-burgundy-deep sm:text-4xl md:text-5xl">
         {title}
       </h2>
       <div
@@ -51,13 +51,7 @@ export function GlassCard({
   className = "",
   as: Tag = "div",
 }: GlassCardProps) {
-  return (
-    <Tag
-      className={`rounded-2xl border border-white/50 bg-glass shadow-glass backdrop-blur-md ${className}`}
-    >
-      {children}
-    </Tag>
-  );
+  return <Tag className={`royal-card ${className}`}>{children}</Tag>;
 }
 
 type OrnamentProps = {
@@ -68,20 +62,21 @@ export function Ornament({ className = "" }: OrnamentProps) {
   return (
     <svg
       className={`text-gold ${className}`}
-      width="80"
-      height="16"
-      viewBox="0 0 80 16"
+      width="140"
+      height="22"
+      viewBox="0 0 140 22"
       fill="none"
       aria-hidden
     >
+      <path d="M8 11h40M92 11h40" stroke="currentColor" strokeWidth="1" opacity="0.55" />
       <path
-        d="M0 8h28M52 8h28"
+        d="M56 11c5-7 10-7 14 0s9 7 14 0"
         stroke="currentColor"
-        strokeWidth="0.75"
-        opacity="0.6"
+        strokeWidth="1"
+        opacity="0.75"
       />
-      <circle cx="40" cy="8" r="2.5" fill="currentColor" opacity="0.8" />
-      <circle cx="40" cy="8" r="5" stroke="currentColor" strokeWidth="0.75" opacity="0.4" />
+      <circle cx="70" cy="11" r="2.4" fill="currentColor" />
+      <circle cx="70" cy="11" r="6" stroke="currentColor" strokeWidth="0.8" opacity="0.4" />
     </svg>
   );
 }

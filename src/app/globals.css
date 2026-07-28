@@ -9,16 +9,63 @@
 
   body {
     @apply bg-ivory font-body text-ink antialiased;
+    background-image:
+      radial-gradient(ellipse 90% 40% at 50% -5%, rgba(196, 163, 90, 0.14), transparent 55%),
+      linear-gradient(180deg, #fbf6ea 0%, #f5edd8 100%);
   }
 
   ::selection {
-    @apply bg-gold/30 text-ink;
+    @apply bg-burgundy/20 text-ink;
   }
 }
 
 @layer components {
   .field {
-    @apply w-full rounded-lg border border-ink/10 bg-white/60 px-4 py-3 font-body text-sm text-ink outline-none transition placeholder:text-ink-faint focus:border-gold/50 focus:ring-2 focus:ring-gold/20;
+    @apply w-full rounded-xl border border-gold/30 bg-ivory px-4 py-3 font-body text-sm text-ink outline-none transition placeholder:text-ink-faint focus:border-gold focus:ring-2 focus:ring-gold/25;
+  }
+
+  .text-foil {
+    @apply bg-gold-foil bg-[length:220%_auto] bg-clip-text text-transparent animate-foil-shine;
+    filter: drop-shadow(0 2px 12px rgba(196, 163, 90, 0.35));
+  }
+
+  /* Kerala kasavu card — cream with double gold border */
+  .royal-card {
+    @apply relative overflow-hidden rounded-sm bg-card-sheen transition duration-500;
+    border: 1.5px solid rgba(196, 163, 90, 0.65);
+    box-shadow:
+      inset 0 0 0 4px rgba(251, 246, 234, 0.95),
+      inset 0 0 0 5.5px rgba(196, 163, 90, 0.45),
+      0 16px 40px rgba(74, 15, 24, 0.08);
+  }
+
+  .royal-card::before {
+    content: "";
+    @apply pointer-events-none absolute inset-x-6 top-0 h-[3px];
+    background: linear-gradient(
+      90deg,
+      transparent,
+      #c4a35a 20%,
+      #8b1e2d 50%,
+      #c4a35a 80%,
+      transparent
+    );
+  }
+
+  .royal-card:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 0 0 4px rgba(251, 246, 234, 0.95),
+      inset 0 0 0 5.5px rgba(196, 163, 90, 0.65),
+      0 20px 48px rgba(74, 15, 24, 0.12);
+  }
+
+  .icon-orb {
+    @apply flex h-14 w-14 items-center justify-center rounded-full border border-gold/50 bg-burgundy/10 text-burgundy shadow-soft;
+  }
+
+  .btn-map {
+    @apply inline-flex w-full items-center justify-center gap-2 border border-gold/50 bg-burgundy px-6 py-3.5 font-body text-xs uppercase tracking-[0.2em] text-ivory transition hover:bg-burgundy-deep hover:shadow-royal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
   }
 
   .gallery-track {
@@ -42,25 +89,22 @@
   .gallery-slide {
     @apply shrink-0;
     scroll-snap-align: start;
-    /* Mobile: 1 photo */
     width: 100%;
   }
 
   @media (min-width: 768px) {
     .gallery-slide {
-      /* Tablet: 2 photos */
       width: calc((100% - 1rem) / 2);
     }
   }
 
   @media (min-width: 1024px) {
     .gallery-slide {
-      /* Desktop: 4 photos (3 gaps × 1rem) */
       width: calc((100% - 3rem) / 4);
     }
   }
 
   .gallery-nav {
-    @apply absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-gold/40 bg-white/80 text-gold-deep shadow-soft backdrop-blur-md transition hover:bg-white hover:shadow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:pointer-events-none disabled:opacity-30;
+    @apply absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-gold/50 bg-ivory text-burgundy shadow-soft backdrop-blur-md transition hover:border-gold hover:shadow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:pointer-events-none disabled:opacity-30;
   }
 }

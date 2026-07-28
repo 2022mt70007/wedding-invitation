@@ -21,8 +21,8 @@ export function Countdown() {
 
   if (parts.expired) {
     return (
-      <p className="font-display text-2xl text-gold-deep sm:text-3xl">
-        Today is the day
+      <p className="font-display text-2xl text-burgundy sm:text-3xl">
+        The muhurtham is here
       </p>
     );
   }
@@ -39,7 +39,7 @@ export function Countdown() {
       {values.map((value, i) => (
         <div key={labels[i]} className="flex items-center gap-3 sm:gap-5">
           <div className="flex min-w-[4.5rem] flex-col items-center sm:min-w-[5.5rem]">
-            <span className="font-display text-3xl font-medium tabular-nums text-ink sm:text-4xl md:text-5xl">
+            <span className="font-display text-3xl font-medium tabular-nums text-burgundy-deep sm:text-4xl md:text-5xl">
               {String(value).padStart(2, "0")}
             </span>
             <span className="mt-1 font-body text-[10px] uppercase tracking-[0.22em] text-ink-muted sm:text-xs">
