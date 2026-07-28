@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ivory font-body text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-gold/30 text-ink;
+  }
+}
+
+@layer components {
+  .field {
+    @apply w-full rounded-lg border border-ink/10 bg-white/60 px-4 py-3 font-body text-sm text-ink outline-none transition placeholder:text-ink-faint focus:border-gold/50 focus:ring-2 focus:ring-gold/20;
+  }
+
+  .gallery-track {
+    @apply flex gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain pb-2;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    cursor: grab;
+  }
+
+  .gallery-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-track.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    user-select: none;
+  }
+
+  .gallery-slide {
+    @apply shrink-0;
+    scroll-snap-align: start;
+    /* Mobile: 1 photo */
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .gallery-slide {
+      /* Tablet: 2 photos */
+      width: calc((100% - 1rem) / 2);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .gallery-slide {
+      /* Desktop: 4 photos (3 gaps × 1rem) */
+      width: calc((100% - 3rem) / 4);
+    }
+  }
+
+  .gallery-nav {
+    @apply absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-gold/40 bg-white/80 text-gold-deep shadow-soft backdrop-blur-md transition hover:bg-white hover:shadow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:pointer-events-none disabled:opacity-30;
+  }
+}

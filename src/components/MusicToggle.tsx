@@ -1,0 +1,184 @@
+"use client";
+
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Music2, Pause } from "lucide-react";
+import { wedding } from "@/lib/wedding";
+import { Ornament } from "@/components/ui/SectionHeading";
+
+type MusicContextValue = {
+  playing: boolean;
+  available: boolean;
+  opened: boolean;
+  openInvitation: () => Promise<void>;
+  toggle: () => Promise<void>;
+};
+
+const MusicContext = createContext<MusicContextValue | null>(null);
+
+export function useMusic() {
+  const ctx = useContext(MusicContext);
+  if (!ctx) throw new Error("useMusic must be used within MusicProvider");
+  return ctx;
+}
+
+export function MusicProvider({ children }: { children: ReactNode }) {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [playing, setPlaying] = useState(false);
+  const [available, setAvailable] = useState(false);
+  const [opened, setOpened] = useState(false);
+
+  useEffect(() => {
+    // MP4 audio works via <audio>; fall back gracefully if codecs differ
+    const audio = document.createElement("audio");
+    audio.src = wedding.music.src;
+    audio.loop = true;
+    audio.preload = "auto";
+    audio.volume = 0.4;
+    audioRef.current = audio;
+
+    const onReady = () => setAvailable(true);
+    const onError = () => setAvailable(false);
+    const onPlay = () => setPlaying(true);
+    const onPause = () => setPlaying(false);
+
+    audio.addEventListener("canplaythrough", onReady);
+    audio.addEventListener("error", onError);
+    audio.addEventListener("play", onPlay);
+    audio.addEventListener("pause", onPause);
+    audio.load();
+
+    return () => {
+      audio.pause();
+      audio.removeEventListener("canplaythrough", onReady);
+      audio.removeEventListener("error", onError);
+      audio.removeEventListener("play", onPlay);
+      audio.removeEventListener("pause", onPause);
+      audioRef.current = null;
+    };
+  }, []);
+
+  const play = useCallback(async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    try {
+      await audio.play();
+      setPlaying(true);
+    } catch {
+      setPlaying(false);
+    }
+  }, []);
+
+  const openInvitation = useCallback(async () => {
+    setOpened(true);
+    document.body.style.overflow = "";
+    await play();
+  }, [play]);
+
+  const toggle = useCallback(async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (!audio.paused) {
+      audio.pause();
+      setPlaying(false);
+      return;
+    }
+    await play();
+  }, [play]);
+
+  useEffect(() => {
+    if (!opened) {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }
+  }, [opened]);
+
+  const value = useMemo(
+    () => ({ playing, available, opened, openInvitation, toggle }),
+    [playing, available, opened, openInvitation, toggle],
+  );
+
+  return (
+    <MusicContext.Provider value={value}>{children}</MusicContext.Provider>
+  );
+}
+
+export function WelcomeGate() {
+  const { opened, openInvitation } = useMusic();
+  const { couple } = wedding;
+
+  return (
+    <AnimatePresence>
+      {!opened && (
+        <motion.div
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-gradient-to-b from-ink via-ink/95 to-[#1a1512] px-6"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(184,149,108,0.18)_0%,transparent_55%)]" />
+
+          <motion.div
+            className="relative z-10 flex max-w-md flex-col items-center text-center"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            <p className="font-body text-[10px] uppercase tracking-[0.35em] text-gold-pale sm:text-xs">
+              Wedding Invitation
+            </p>
+            <h1 className="mt-5 font-display text-4xl font-medium tracking-wide text-ivory sm:text-5xl">
+              {couple.partner1}
+              <span className="mx-3 text-gold-light">&</span>
+              {couple.partner2}
+            </h1>
+            <Ornament className="mt-6 text-gold-light" />
+            <p className="mt-5 font-body text-sm text-ivory/70">
+              {wedding.music.label} awaits inside
+            </p>
+
+            <button
+              type="button"
+              onClick={() => void openInvitation()}
+              className="mt-10 border border-gold-light/50 bg-white/5 px-10 py-3.5 font-body text-xs uppercase tracking-[0.28em] text-ivory backdrop-blur-sm transition hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-pale"
+            >
+              Open Invitation
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+export function MusicToggle() {
+  const { playing, available, opened, toggle } = useMusic();
+
+  if (!opened || (!available && !playing)) return null;
+
+  return (
+    <button
+      type="button"
+      onClick={() => void toggle()}
+      aria-label={playing ? "Pause music" : wedding.music.label}
+      className="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-white/70 text-gold-deep shadow-soft backdrop-blur-md transition hover:bg-white/90 hover:shadow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+    >
+      {playing ? (
+        <Pause className="h-5 w-5" strokeWidth={1.5} />
+      ) : (
+        <Music2 className="h-5 w-5" strokeWidth={1.5} />
+      )}
+    </button>
+  );
+}
