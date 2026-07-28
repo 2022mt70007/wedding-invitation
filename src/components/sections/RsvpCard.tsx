@@ -114,7 +114,7 @@ export function RsvpCard() {
                       className={`cursor-pointer rounded-lg border px-2 py-3 text-center font-body text-[11px] transition sm:text-xs ${
                         attendance === value
                           ? "border-gold bg-gold/15 text-gold-deep"
-                          : "border-ink/10 bg-white/40 text-ink-soft hover:border-gold/40"
+                          : "border-gold/20 bg-burgundy-deep/50 text-ink-soft hover:border-gold/40"
                       }`}
                     >
                       <input

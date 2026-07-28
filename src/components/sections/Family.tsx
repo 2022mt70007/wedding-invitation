@@ -18,7 +18,7 @@ export function Family() {
         {wedding.family.sides.map((side) => (
           <StaggerItem key={side.title}>
             <GlassCard className="h-full px-8 py-10">
-              <h3 className="text-center font-display text-2xl text-burgundy">
+              <h3 className="text-center font-display text-2xl text-gold-pale">
                 {side.title}
               </h3>
               <div className="mx-auto mt-4 h-px w-12 bg-gold-line" aria-hidden />

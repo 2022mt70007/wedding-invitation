@@ -37,7 +37,7 @@ export function EventTimeline() {
                 <div className="icon-orb mx-auto">
                   <Icon className="h-5 w-5" strokeWidth={1.5} />
                 </div>
-                <h3 className="mt-6 text-center font-display text-2xl text-burgundy-deep sm:text-3xl">
+                <h3 className="mt-6 text-center font-display text-2xl text-gold-pale sm:text-3xl">
                   {event.title}
                 </h3>
                 <div className="mx-auto mt-4 h-px w-12 bg-gold-line" aria-hidden />
@@ -45,28 +45,28 @@ export function EventTimeline() {
                 <ul className="mt-7 flex-1 space-y-3.5">
                   <li className="flex items-start gap-3 font-body text-sm text-ink-soft">
                     <Calendar
-                      className="mt-0.5 h-4 w-4 shrink-0 text-burgundy"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-gold-light"
                       strokeWidth={1.5}
                     />
                     <span>{event.date}</span>
                   </li>
                   <li className="flex items-start gap-3 font-body text-sm text-ink-soft">
                     <Clock
-                      className="mt-0.5 h-4 w-4 shrink-0 text-burgundy"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-gold-light"
                       strokeWidth={1.5}
                     />
                     <span>{event.time}</span>
                   </li>
                   <li className="flex items-start gap-3 font-body text-sm text-ink-soft">
                     <Building2
-                      className="mt-0.5 h-4 w-4 shrink-0 text-burgundy"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-gold-light"
                       strokeWidth={1.5}
                     />
                     <span>{event.venue}</span>
                   </li>
                   <li className="flex items-start gap-3 font-body text-sm text-ink-soft">
                     <MapPin
-                      className="mt-0.5 h-4 w-4 shrink-0 text-burgundy"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-gold-light"
                       strokeWidth={1.5}
                     />
                     <span>{event.address}</span>

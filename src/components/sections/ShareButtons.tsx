@@ -44,7 +44,7 @@ export function ShareButtons() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Share on ${name}`}
-              className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/45 bg-burgundy/10 text-burgundy shadow-soft backdrop-blur-sm transition hover:border-gold hover:bg-burgundy/15 hover:shadow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/40 bg-burgundy-rich text-gold-pale shadow-soft backdrop-blur-sm transition hover:border-gold hover:bg-burgundy hover:shadow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
             >
               <Icon className="h-5 w-5" strokeWidth={1.5} />
             </a>

@@ -177,7 +177,7 @@ export function MusicToggle() {
       type="button"
       onClick={() => void toggle()}
       aria-label={playing ? "Pause music" : wedding.music.label}
-      className="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-gold/50 bg-burgundy text-gold-pale shadow-royal backdrop-blur-md transition hover:bg-burgundy-soft hover:shadow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+      className="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-gold/50 bg-cherry text-gold-pale shadow-royal backdrop-blur-md transition hover:bg-burgundy-soft hover:shadow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
     >
       {playing ? (
         <Pause className="h-5 w-5" strokeWidth={1.5} />

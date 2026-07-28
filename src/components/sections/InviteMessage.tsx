@@ -12,10 +12,10 @@ export function InviteMessage() {
       <FadeIn className="relative z-10 mx-auto max-w-2xl">
         <GlassCard className="relative overflow-hidden px-8 py-12 sm:px-14 sm:py-16">
           <RoyalCorners />
-          <p className="relative text-center font-body text-xs uppercase tracking-[0.28em] text-burgundy-soft">
+          <p className="relative text-center font-body text-xs uppercase tracking-[0.28em] text-gold-light">
             The Invitation
           </p>
-          <h2 className="relative mt-4 text-center font-display text-3xl text-burgundy-deep sm:text-4xl">
+          <h2 className="relative mt-4 text-center font-display text-3xl text-gold-pale sm:text-4xl">
             {invite.greeting}
           </h2>
           <Ornament className="relative mx-auto mt-5" />
@@ -25,7 +25,7 @@ export function InviteMessage() {
           <p className="relative mt-10 text-center font-body text-sm italic text-ink-muted">
             {invite.closing}
           </p>
-          <p className="relative mt-2 text-center font-script text-3xl text-burgundy sm:text-4xl">
+          <p className="relative mt-2 text-center font-script text-3xl text-gold-light sm:text-4xl">
             {invite.signedBy || `${couple.partner1} & ${couple.partner2}`}
           </p>
         </GlassCard>

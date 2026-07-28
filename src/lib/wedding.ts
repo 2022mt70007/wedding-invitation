@@ -19,7 +19,7 @@ export const wedding = {
     partner1: "Karthik",
     partner2: "Vyshnavi",
     monogram: "K & V",
-    tagline: "A love sealed in garnet and gold.",
+    tagline: "Wrapped in crimson. Written in gold.",
   },
 
   date: {

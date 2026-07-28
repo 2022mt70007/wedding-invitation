@@ -29,17 +29,17 @@ export function Venue() {
                 <MapPin className="h-6 w-6" strokeWidth={1.4} />
               </div>
 
-              <p className="mt-5 font-body text-[10px] uppercase tracking-[0.28em] text-burgundy-soft">
+              <p className="mt-5 font-body text-[10px] uppercase tracking-[0.28em] text-gold-light">
                 {event.title}
               </p>
-              <h3 className="mt-2 font-display text-2xl text-burgundy-deep sm:text-3xl">
+              <h3 className="mt-2 font-display text-2xl text-gold-pale sm:text-3xl">
                 {event.venue}
               </h3>
               <div className="mx-auto mt-4 h-px w-12 bg-gold-line" aria-hidden />
 
               <p className="mx-auto mt-6 flex max-w-xs items-start justify-center gap-2 font-body text-sm leading-relaxed text-ink-soft">
                 <Building2
-                  className="mt-0.5 h-4 w-4 shrink-0 text-burgundy"
+                  className="mt-0.5 h-4 w-4 shrink-0 text-gold-light"
                   strokeWidth={1.5}
                 />
                 <span className="text-left">{event.address}</span>
@@ -47,11 +47,11 @@ export function Venue() {
 
               <div className="mt-6 space-y-2.5 font-body text-sm text-ink-muted">
                 <p className="inline-flex items-center justify-center gap-2">
-                  <Calendar className="h-3.5 w-3.5 text-burgundy" strokeWidth={1.5} />
+                  <Calendar className="h-3.5 w-3.5 text-gold-light" strokeWidth={1.5} />
                   {event.date}
                 </p>
                 <p className="flex items-center justify-center gap-2">
-                  <Clock className="h-3.5 w-3.5 text-burgundy" strokeWidth={1.5} />
+                  <Clock className="h-3.5 w-3.5 text-gold-light" strokeWidth={1.5} />
                   {event.time}
                 </p>
               </div>
