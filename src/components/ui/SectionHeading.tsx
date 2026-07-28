@@ -20,11 +20,11 @@ export function SectionHeading({
   return (
     <div className={`max-w-2xl ${alignClass} ${className}`}>
       {eyebrow && (
-        <p className="mb-3 font-body text-xs uppercase tracking-[0.28em] text-gold-deep">
+        <p className="mb-3 font-body text-xs uppercase tracking-[0.28em] text-burgundy-soft">
           {eyebrow}
         </p>
       )}
-      <h2 className="font-display text-3xl font-medium tracking-wide text-ink sm:text-4xl md:text-5xl">
+      <h2 className="font-display text-3xl font-medium tracking-wide text-burgundy-deep sm:text-4xl md:text-5xl">
         {title}
       </h2>
       <div
@@ -52,11 +52,7 @@ export function GlassCard({
   as: Tag = "div",
 }: GlassCardProps) {
   return (
-    <Tag
-      className={`rounded-2xl border border-white/50 bg-glass shadow-glass backdrop-blur-md ${className}`}
-    >
-      {children}
-    </Tag>
+    <Tag className={`royal-card ${className}`}>{children}</Tag>
   );
 }
 
@@ -68,20 +64,33 @@ export function Ornament({ className = "" }: OrnamentProps) {
   return (
     <svg
       className={`text-gold ${className}`}
-      width="80"
-      height="16"
-      viewBox="0 0 80 16"
+      width="120"
+      height="20"
+      viewBox="0 0 120 20"
       fill="none"
       aria-hidden
     >
       <path
-        d="M0 8h28M52 8h28"
+        d="M4 10h32M84 10h32"
         stroke="currentColor"
-        strokeWidth="0.75"
-        opacity="0.6"
+        strokeWidth="0.8"
+        opacity="0.55"
       />
-      <circle cx="40" cy="8" r="2.5" fill="currentColor" opacity="0.8" />
-      <circle cx="40" cy="8" r="5" stroke="currentColor" strokeWidth="0.75" opacity="0.4" />
+      <path
+        d="M48 10c4-6 8-6 12 0s8 6 12 0"
+        stroke="currentColor"
+        strokeWidth="0.9"
+        opacity="0.7"
+      />
+      <circle cx="60" cy="10" r="2.2" fill="currentColor" opacity="0.9" />
+      <circle
+        cx="60"
+        cy="10"
+        r="5.5"
+        stroke="currentColor"
+        strokeWidth="0.7"
+        opacity="0.4"
+      />
     </svg>
   );
 }

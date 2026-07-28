@@ -18,8 +18,8 @@ const iconMap = {
 
 export function EventTimeline() {
   return (
-    <section id="events" className="px-6 py-20 sm:py-28">
-      <FadeIn>
+    <section id="events" className="relative overflow-hidden px-6 py-20 sm:py-28">
+      <FadeIn className="relative z-10">
         <SectionHeading
           eyebrow="Celebrate with us"
           title="Wedding Events"
@@ -27,17 +27,17 @@ export function EventTimeline() {
         />
       </FadeIn>
 
-      <Stagger className="mx-auto mt-14 grid max-w-4xl gap-6 md:grid-cols-2">
+      <Stagger className="relative z-10 mx-auto mt-14 grid max-w-4xl gap-6 md:grid-cols-2">
         {wedding.events.map((event) => {
           const Icon = iconMap[event.icon];
 
           return (
             <StaggerItem key={event.id}>
-              <GlassCard className="flex h-full flex-col px-8 py-10 transition duration-500 hover:shadow-gold">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-gold/40 bg-gold/10">
-                  <Icon className="h-5 w-5 text-gold-deep" strokeWidth={1.5} />
+              <GlassCard className="flex h-full flex-col px-8 py-10 sm:px-9">
+                <div className="icon-orb mx-auto">
+                  <Icon className="h-5 w-5" strokeWidth={1.5} />
                 </div>
-                <h3 className="mt-6 text-center font-display text-2xl text-ink sm:text-3xl">
+                <h3 className="mt-6 text-center font-display text-2xl text-burgundy-deep sm:text-3xl">
                   {event.title}
                 </h3>
                 <div className="mx-auto mt-4 h-px w-12 bg-gold-line" aria-hidden />
@@ -45,28 +45,28 @@ export function EventTimeline() {
                 <ul className="mt-7 flex-1 space-y-3.5">
                   <li className="flex items-start gap-3 font-body text-sm text-ink-soft">
                     <Calendar
-                      className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-burgundy"
                       strokeWidth={1.5}
                     />
                     <span>{event.date}</span>
                   </li>
                   <li className="flex items-start gap-3 font-body text-sm text-ink-soft">
                     <Clock
-                      className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-burgundy"
                       strokeWidth={1.5}
                     />
                     <span>{event.time}</span>
                   </li>
                   <li className="flex items-start gap-3 font-body text-sm text-ink-soft">
                     <Building2
-                      className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-burgundy"
                       strokeWidth={1.5}
                     />
                     <span>{event.venue}</span>
                   </li>
                   <li className="flex items-start gap-3 font-body text-sm text-ink-soft">
                     <MapPin
-                      className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-burgundy"
                       strokeWidth={1.5}
                     />
                     <span>{event.address}</span>
@@ -77,7 +77,7 @@ export function EventTimeline() {
                   href={event.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-8 inline-flex w-full items-center justify-center gap-2 border border-gold/50 bg-gold/10 px-5 py-3 font-body text-xs uppercase tracking-[0.2em] text-gold-deep transition hover:bg-gold/20 hover:shadow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                  className="btn-map mt-8"
                 >
                   <Navigation className="h-3.5 w-3.5" strokeWidth={1.5} />
                   Open in Google Maps

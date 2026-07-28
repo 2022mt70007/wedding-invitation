@@ -7,13 +7,13 @@ export function CountdownSection() {
   return (
     <section
       id="countdown"
-      className="relative bg-section-glow px-6 py-20 sm:py-28"
+      className="relative overflow-hidden bg-section-glow px-6 py-20 sm:py-28"
     >
-      <FadeIn className="mx-auto flex max-w-3xl flex-col items-center text-center">
-        <p className="font-body text-xs uppercase tracking-[0.28em] text-gold-deep">
+      <FadeIn className="relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center">
+        <p className="font-body text-xs uppercase tracking-[0.28em] text-burgundy-soft">
           Counting down to forever
         </p>
-        <h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">
+        <h2 className="mt-3 font-display text-3xl text-burgundy-deep sm:text-4xl">
           Until we say I do
         </h2>
         <Ornament className="mt-5" />

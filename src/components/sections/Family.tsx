@@ -4,9 +4,9 @@ import { wedding } from "@/lib/wedding";
 
 export function Family() {
   return (
-    <section id="family" className="relative px-6 py-20 sm:py-28">
+    <section id="family" className="relative overflow-hidden px-6 py-20 sm:py-28">
       <div className="pointer-events-none absolute inset-0 bg-hero-wash opacity-50" aria-hidden />
-      <FadeIn>
+      <FadeIn className="relative z-10">
         <SectionHeading
           eyebrow="With gratitude"
           title="Our Families"
@@ -14,11 +14,11 @@ export function Family() {
         />
       </FadeIn>
 
-      <Stagger className="relative mx-auto mt-14 grid max-w-4xl gap-8 md:grid-cols-2">
+      <Stagger className="relative z-10 mx-auto mt-14 grid max-w-4xl gap-8 md:grid-cols-2">
         {wedding.family.sides.map((side) => (
           <StaggerItem key={side.title}>
             <GlassCard className="h-full px-8 py-10">
-              <h3 className="text-center font-display text-2xl text-gold-deep">
+              <h3 className="text-center font-display text-2xl text-burgundy">
                 {side.title}
               </h3>
               <div className="mx-auto mt-4 h-px w-12 bg-gold-line" aria-hidden />

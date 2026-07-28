@@ -14,6 +14,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Music2, Pause } from "lucide-react";
 import { wedding } from "@/lib/wedding";
 import { Ornament } from "@/components/ui/SectionHeading";
+import { WaxSeal } from "@/components/ui/RoyalExtras";
 
 type MusicContextValue = {
   playing: boolean;
@@ -122,12 +123,13 @@ export function WelcomeGate() {
     <AnimatePresence>
       {!opened && (
         <motion.div
-          className="fixed inset-0 z-[200] flex items-center justify-center bg-gradient-to-b from-ink via-ink/95 to-[#1a1512] px-6"
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-gradient-to-b from-burgundy-deep via-burgundy-rich to-burgundy px-6"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          exit={{ opacity: 0, scale: 1.02 }}
+          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(184,149,108,0.18)_0%,transparent_55%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,168,130,0.2)_0%,transparent_55%)]" />
+          <div className="pointer-events-none absolute inset-6 rounded-[1.75rem] border border-gold/20 sm:inset-10" />
 
           <motion.div
             className="relative z-10 flex max-w-md flex-col items-center text-center"
@@ -135,23 +137,26 @@ export function WelcomeGate() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            <p className="font-body text-[10px] uppercase tracking-[0.35em] text-gold-pale sm:text-xs">
-              Wedding Invitation
+            <WaxSeal initials="K&V" animate />
+            <p className="mt-8 font-body text-[10px] uppercase tracking-[0.4em] text-gold-pale sm:text-xs">
+              You are invited
             </p>
-            <h1 className="mt-5 font-display text-4xl font-medium tracking-wide text-ivory sm:text-5xl">
+            <h1 className="mt-4 font-display text-4xl font-medium tracking-wide text-ivory sm:text-5xl">
               {couple.partner1}
-              <span className="mx-3 text-gold-light">&</span>
+              <span className="mx-3 font-script text-[0.55em] text-gold-light">
+                &
+              </span>
               {couple.partner2}
             </h1>
             <Ornament className="mt-6 text-gold-light" />
-            <p className="mt-5 font-body text-sm text-ivory/70">
-              {wedding.music.label} awaits inside
+            <p className="mt-5 font-body text-sm italic text-ivory/70">
+              Break the seal to begin
             </p>
 
             <button
               type="button"
               onClick={() => void openInvitation()}
-              className="mt-10 border border-gold-light/50 bg-white/5 px-10 py-3.5 font-body text-xs uppercase tracking-[0.28em] text-ivory backdrop-blur-sm transition hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-pale"
+              className="mt-10 rounded-full border border-gold-light/50 bg-ivory/10 px-10 py-3.5 font-body text-xs uppercase tracking-[0.28em] text-gold-pale backdrop-blur-sm transition hover:bg-ivory/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-pale"
             >
               Open Invitation
             </button>
@@ -172,7 +177,7 @@ export function MusicToggle() {
       type="button"
       onClick={() => void toggle()}
       aria-label={playing ? "Pause music" : wedding.music.label}
-      className="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-white/70 text-gold-deep shadow-soft backdrop-blur-md transition hover:bg-white/90 hover:shadow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+      className="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-gold/50 bg-burgundy text-gold-pale shadow-royal backdrop-blur-md transition hover:bg-burgundy-soft hover:shadow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
     >
       {playing ? (
         <Pause className="h-5 w-5" strokeWidth={1.5} />

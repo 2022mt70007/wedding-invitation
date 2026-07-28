@@ -124,8 +124,8 @@ export function Gallery() {
   };
 
   return (
-    <section id="gallery" className="overflow-hidden py-20 sm:py-28">
-      <FadeIn className="px-6">
+    <section id="gallery" className="relative overflow-hidden py-20 sm:py-28">
+      <FadeIn className="relative z-10 px-6">
         <SectionHeading
           eyebrow="Our story in frames"
           title="Gallery"
@@ -133,7 +133,7 @@ export function Gallery() {
         />
       </FadeIn>
 
-      <FadeIn delay={0.1} className="relative mx-auto mt-14 max-w-6xl">
+      <FadeIn delay={0.1} className="relative z-10 mx-auto mt-14 max-w-6xl">
         <button
           type="button"
           onClick={() => scrollByPage(-1)}

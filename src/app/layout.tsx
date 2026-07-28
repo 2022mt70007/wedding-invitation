@@ -1,20 +1,37 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Outfit } from "next/font/google";
-import { MusicProvider, MusicToggle, WelcomeGate } from "@/components/MusicToggle";
+import {
+  Cormorant_Garamond,
+  Libre_Baskerville,
+  Great_Vibes,
+} from "next/font/google";
+import {
+  MusicProvider,
+  MusicToggle,
+  WelcomeGate,
+} from "@/components/MusicToggle";
+import { RosePetals } from "@/components/ui/RosePetals";
 import { wedding } from "@/lib/wedding";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 });
 
-const body = Outfit({
+const body = Libre_Baskerville({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
   variable: "--font-body",
+  display: "swap",
+});
+
+const script = Great_Vibes({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-script",
   display: "swap",
 });
 
@@ -62,7 +79,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FBF7F2",
+  themeColor: "#8B2332",
   width: "device-width",
   initialScale: 1,
 };
@@ -73,10 +90,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html
+      lang="en"
+      className={`${display.variable} ${body.variable} ${script.variable}`}
+    >
       <body className="min-h-screen overflow-x-hidden">
         <MusicProvider>
           <WelcomeGate />
+          <RosePetals />
           {children}
           <MusicToggle />
         </MusicProvider>

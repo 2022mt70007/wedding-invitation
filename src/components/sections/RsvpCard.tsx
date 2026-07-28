@@ -43,9 +43,9 @@ export function RsvpCard() {
   }
 
   return (
-    <section id="rsvp" className="relative px-6 py-20 sm:py-28">
+    <section id="rsvp" className="relative overflow-hidden px-6 py-20 sm:py-28">
       <div className="pointer-events-none absolute inset-0 bg-section-glow" aria-hidden />
-      <FadeIn>
+      <FadeIn className="relative z-10">
         <SectionHeading
           eyebrow="Kindly reply"
           title={rsvp.title}
@@ -53,7 +53,7 @@ export function RsvpCard() {
         />
       </FadeIn>
 
-      <FadeIn delay={0.12} className="relative mx-auto mt-12 max-w-lg">
+      <FadeIn delay={0.12} className="relative z-10 mx-auto mt-12 max-w-lg">
         <GlassCard className="px-7 py-10 sm:px-10">
           {sent ? (
             <div className="py-8 text-center">
@@ -143,7 +143,7 @@ export function RsvpCard() {
 
               <button
                 type="submit"
-                className="flex w-full items-center justify-center gap-2 bg-gold-deep px-6 py-3.5 font-body text-xs uppercase tracking-[0.22em] text-ivory transition hover:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-burgundy px-6 py-3.5 font-body text-xs uppercase tracking-[0.22em] text-ivory transition hover:bg-burgundy-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy"
               >
                 <Send className="h-4 w-4" strokeWidth={1.5} />
                 Send via WhatsApp

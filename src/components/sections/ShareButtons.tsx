@@ -29,8 +29,8 @@ const shareLinks = [
 
 export function ShareButtons() {
   return (
-    <section id="share" className="px-6 py-16 sm:py-20">
-      <FadeIn className="mx-auto max-w-xl text-center">
+    <section id="share" className="relative overflow-hidden px-6 py-16 sm:py-20">
+      <FadeIn className="relative z-10 mx-auto max-w-xl text-center">
         <SectionHeading
           eyebrow="Spread the joy"
           title="Share the Invite"
@@ -44,7 +44,7 @@ export function ShareButtons() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Share on ${name}`}
-              className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/40 bg-white/50 text-gold-deep shadow-soft backdrop-blur-sm transition hover:border-gold hover:bg-gold/10 hover:shadow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/45 bg-burgundy/10 text-burgundy shadow-soft backdrop-blur-sm transition hover:border-gold hover:bg-burgundy/15 hover:shadow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
             >
               <Icon className="h-5 w-5" strokeWidth={1.5} />
             </a>
