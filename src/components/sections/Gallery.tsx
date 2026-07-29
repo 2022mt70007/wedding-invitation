@@ -183,7 +183,7 @@ export function Gallery() {
                   if (dragState.current.moved) return;
                   setActive(index);
                 }}
-                className="group relative aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                className="group relative aspect-[4/5] w-full overflow-hidden rounded-md border border-gold/30 shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 aria-label={`View ${photo.alt}`}
               >
                 <Image

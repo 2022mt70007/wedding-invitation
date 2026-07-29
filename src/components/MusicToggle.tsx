@@ -122,12 +122,14 @@ export function WelcomeGate() {
     <AnimatePresence>
       {!opened && (
         <motion.div
-          className="fixed inset-0 z-[200] flex items-center justify-center bg-gradient-to-b from-ink via-ink/95 to-[#1a1512] px-6"
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-gradient-to-b from-temple-deep via-temple to-burgundy-rich px-6"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(184,149,108,0.18)_0%,transparent_55%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,162,39,0.2)_0%,transparent_55%)]" />
+          <div className="pointer-events-none absolute inset-6 border border-gold/30 sm:inset-10" />
+          <div className="pointer-events-none absolute inset-8 border border-gold/15 sm:inset-12" />
 
           <motion.div
             className="relative z-10 flex max-w-md flex-col items-center text-center"
@@ -151,7 +153,7 @@ export function WelcomeGate() {
             <button
               type="button"
               onClick={() => void openInvitation()}
-              className="mt-10 border border-gold-light/50 bg-white/5 px-10 py-3.5 font-body text-xs uppercase tracking-[0.28em] text-ivory backdrop-blur-sm transition hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-pale"
+              className="mt-10 border border-gold-light/55 bg-gold/10 px-10 py-3.5 font-body text-xs uppercase tracking-[0.28em] text-gold-pale backdrop-blur-sm transition hover:bg-gold/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-pale"
             >
               Open Invitation
             </button>
@@ -172,7 +174,7 @@ export function MusicToggle() {
       type="button"
       onClick={() => void toggle()}
       aria-label={playing ? "Pause music" : wedding.music.label}
-      className="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-white/70 text-gold-deep shadow-soft backdrop-blur-md transition hover:bg-white/90 hover:shadow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+      className="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-gold/50 bg-temple text-gold-pale shadow-temple backdrop-blur-md transition hover:bg-temple-deep hover:shadow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
     >
       {playing ? (
         <Pause className="h-5 w-5" strokeWidth={1.5} />

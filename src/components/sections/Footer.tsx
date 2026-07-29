@@ -6,7 +6,7 @@ export function Footer() {
   const { couple } = wedding;
 
   return (
-    <footer className="border-t border-gold/20 px-6 py-14 text-center">
+    <footer className="border-t border-gold/35 bg-gradient-to-b from-ivory to-temple-mist/60 px-6 py-14 text-center">
       <p className="font-display text-3xl text-ink">
         {couple.partner1}{" "}
         <span className="text-gold">&</span> {couple.partner2}

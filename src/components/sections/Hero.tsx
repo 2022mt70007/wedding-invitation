@@ -22,11 +22,11 @@ export function Hero() {
           className="object-cover object-center"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/35 to-ivory-soft"
+          className="absolute inset-0 bg-royal-veil"
           aria-hidden
         />
         <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(44,36,32,0.35)_100%)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_15%,rgba(91,15,15,0.35)_100%)]"
           aria-hidden
         />
       </div>
@@ -42,16 +42,16 @@ export function Hero() {
         </motion.p>
 
         <motion.h1
-          className="mt-6 font-display text-[clamp(3rem,12vw,7rem)] font-medium leading-[0.95] tracking-wide text-ivory"
+          className="mt-6 font-display text-[clamp(3rem,12vw,7rem)] font-medium leading-[0.95] tracking-wide"
           initial={reduce ? false : { opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="block">{couple.partner1}</span>
-          <span className="my-2 block font-display text-[0.35em] font-normal tracking-[0.4em] text-gold-light">
+          <span className="text-foil block">{couple.partner1}</span>
+          <span className="my-2 block font-display text-[0.35em] font-normal tracking-[0.4em] text-gold-pale">
             &
           </span>
-          <span className="block">{couple.partner2}</span>
+          <span className="text-foil block">{couple.partner2}</span>
         </motion.h1>
 
         <motion.div
@@ -72,7 +72,7 @@ export function Hero() {
 
         <motion.a
           href={hero.ctaHref}
-          className="mt-10 inline-flex items-center gap-2 border border-gold-light/60 bg-white/10 px-8 py-3 font-body text-xs uppercase tracking-[0.25em] text-ivory backdrop-blur-sm transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-pale"
+          className="mt-10 inline-flex items-center gap-2 border border-gold-light/60 bg-temple-deep/40 px-8 py-3 font-body text-xs uppercase tracking-[0.25em] text-ivory backdrop-blur-sm transition hover:bg-temple/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-pale"
           initial={reduce ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.95 }}

@@ -143,7 +143,7 @@ export function RsvpCard() {
 
               <button
                 type="submit"
-                className="flex w-full items-center justify-center gap-2 bg-gold-deep px-6 py-3.5 font-body text-xs uppercase tracking-[0.22em] text-ivory transition hover:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                className="flex w-full items-center justify-center gap-2 bg-temple px-6 py-3.5 font-body text-xs uppercase tracking-[0.22em] text-ivory transition hover:bg-temple-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
               >
                 <Send className="h-4 w-4" strokeWidth={1.5} />
                 Send via WhatsApp

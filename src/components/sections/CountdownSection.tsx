@@ -10,7 +10,7 @@ export function CountdownSection() {
       className="relative bg-section-glow px-6 py-20 sm:py-28"
     >
       <FadeIn className="mx-auto flex max-w-3xl flex-col items-center text-center">
-        <p className="font-body text-xs uppercase tracking-[0.28em] text-gold-deep">
+        <p className="font-body text-xs uppercase tracking-[0.28em] text-temple">
           Counting down to forever
         </p>
         <h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">
