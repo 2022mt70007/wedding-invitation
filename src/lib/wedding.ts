@@ -24,9 +24,9 @@ export const wedding = {
 
   date: {
     /** ISO string used by countdown & formatting */
-    iso: "2026-12-12T18:30:00+05:30",
-    display: "Saturday, 12 December 2026",
-    time: "6:30 PM onwards",
+    iso: "2026-08-31T11:00:00+05:30",
+    display: "Monday, 31 August 2026",
+    time: "11:00 AM – 2:00 PM",
   },
 
   hero: {
@@ -36,7 +36,7 @@ export const wedding = {
   },
 
   music: {
-    src: "/music/KDVyshnavi.mp4",
+    src: "/music/KDVySong.mp4",
     label: "Kun Faya Kun",
   },
 
@@ -52,24 +52,12 @@ export const wedding = {
     {
       id: "wedding",
       title: "Wedding Ceremony",
-      date: "Saturday, 12 December 2026",
-      time: "10:00 AM",
-      venue: "Sacred Garden Mandap",
-      address: "Green Meadows Resort, Shamshabad Road, Hyderabad 501218",
-      mapUrl:
-        "https://www.google.com/maps/search/?api=1&query=Shamshabad+Hyderabad+wedding+venue",
+      date: "Monday, 31 August 2026",
+      time: "11:00 AM – 2:00 PM",
+      venue: "Chakolas Pavilion",
+      address: "North Kalamassery, HMT Kalamassery, Ernakulam",
+      mapUrl: "https://maps.app.goo.gl/KBxA3bGN31eRKd647",
       icon: "heart" as const,
-    },
-    {
-      id: "reception",
-      title: "Reception",
-      date: "Saturday, 12 December 2026",
-      time: "6:30 PM",
-      venue: "The Orchid Pavilion",
-      address: "12 Rosewood Lane, Jubilee Hills, Hyderabad 500033",
-      mapUrl:
-        "https://www.google.com/maps/search/?api=1&query=Jubilee+Hills+Hyderabad",
-      icon: "sparkles" as const,
     },
   ],
 
@@ -100,11 +88,6 @@ export const wedding = {
       caption: "Forever starts here",
     },
     {
-      src: "/images/gallery-6.jpg",
-      alt: "Karthik and Vyshnavi — together",
-      caption: "Hand in hand",
-    },
-    {
       src: "/images/gallery-7.jpg",
       alt: "Karthik and Vyshnavi — soft light",
       caption: "Soft light",
@@ -129,41 +112,6 @@ export const wedding = {
       alt: "Karthik and Vyshnavi — promise",
       caption: "The promise",
     },
-    {
-      src: "/images/gallery-12.jpg",
-      alt: "Karthik and Vyshnavi — forever",
-      caption: "Always",
-    },
-    {
-      src: "/images/gallery-13.jpg",
-      alt: "Karthik and Vyshnavi — embrace",
-      caption: "Embrace",
-    },
-    {
-      src: "/images/gallery-14.jpg",
-      alt: "Karthik and Vyshnavi — twilight",
-      caption: "Twilight",
-    },
-    {
-      src: "/images/gallery-15.jpg",
-      alt: "Karthik and Vyshnavi — bloom",
-      caption: "In bloom",
-    },
-    {
-      src: "/images/gallery-16.jpg",
-      alt: "Karthik and Vyshnavi — serenity",
-      caption: "Serenity",
-    },
-    {
-      src: "/images/gallery-17.jpg",
-      alt: "Karthik and Vyshnavi — devotion",
-      caption: "Devotion",
-    },
-    {
-      src: "/images/gallery-18.jpg",
-      alt: "Karthik and Vyshnavi — eternity",
-      caption: "Eternity",
-    },
   ],
 
   family: {
@@ -172,17 +120,16 @@ export const wedding = {
       {
         title: "Groom's Family",
         members: [
-          { name: "Mr. & Mrs. Sharma", relation: "Parents of the Groom" },
-          { name: "Arjun Sharma", relation: "Brother" },
-          { name: "Priya Sharma", relation: "Sister-in-law" },
+          { name: "Reji N", relation: "Father" },
+          { name: "Deepa Reji", relation: "Mother" },
         ],
       },
       {
         title: "Bride's Family",
         members: [
-          { name: "Mr. & Mrs. Reddy", relation: "Parents of the Bride" },
-          { name: "Ananya Reddy", relation: "Sister" },
-          { name: "Rohan Reddy", relation: "Brother" },
+          { name: "Sabu KP", relation: "Father" },
+          { name: "Lekha PS", relation: "Mother" },
+          { name: "Vivek KS", relation: "Brother" },
         ],
       },
     ],
@@ -191,8 +138,8 @@ export const wedding = {
   rsvp: {
     title: "Will You Join Us?",
     subtitle:
-      "We would be honoured by your presence. Kindly let us know by 1 November 2026.",
-    phone: "+919876543210",
+      "We would be honoured by your presence. Kindly let us know by 15 August 2026.",
+    phone: "+917994513284",
     email: "rsvp@karthikvaishnavi.tech",
     whatsappMessage:
       "Hello! I would like to RSVP for Karthik & Vyshnavi's wedding.",

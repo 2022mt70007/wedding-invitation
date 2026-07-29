@@ -42,13 +42,13 @@ export function Hero() {
         </motion.p>
 
         <motion.h1
-          className="mt-6 font-display text-[clamp(3rem,12vw,7rem)] font-medium leading-[0.95] tracking-wide"
+          className="mt-6 font-script text-[clamp(3.25rem,13vw,7.5rem)] font-normal leading-[1.05] tracking-normal"
           initial={reduce ? false : { opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="text-foil block">{couple.partner1}</span>
-          <span className="my-2 block font-display text-[0.35em] font-normal tracking-[0.4em] text-gold-pale">
+          <span className="my-1 block font-script text-[0.45em] font-normal tracking-normal text-gold-pale">
             &
           </span>
           <span className="text-foil block">{couple.partner2}</span>
@@ -61,18 +61,20 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 0.7 }}
         >
           <Ornament className="text-gold-light" />
-          <p className="font-body text-sm tracking-wide text-ivory/90 sm:text-base">
+          <p className="font-body text-sm tracking-wide text-ivory drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)] sm:text-base">
             {couple.tagline}
           </p>
-          <p className="mt-2 font-display text-xl text-gold-pale sm:text-2xl">
+          <p className="text-foil-flat mt-5 font-display text-2xl font-bold tracking-wide sm:mt-6 sm:text-3xl md:text-4xl">
             {date.display}
           </p>
-          <p className="font-body text-sm text-ivory/70">{date.time}</p>
+          <p className="font-body text-sm text-ivory drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)]">
+            {date.time}
+          </p>
         </motion.div>
 
         <motion.a
           href={hero.ctaHref}
-          className="mt-10 inline-flex items-center gap-2 border border-gold-light/60 bg-temple-deep/40 px-8 py-3 font-body text-xs uppercase tracking-[0.25em] text-ivory backdrop-blur-sm transition hover:bg-temple/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-pale"
+          className="mt-10 inline-flex items-center gap-2 border border-[#A82828] bg-[#7B1E1E] px-8 py-3 font-body text-xs uppercase tracking-[0.25em] text-ivory shadow-[0_4px_16px_rgba(91,15,15,0.45)] backdrop-blur-sm transition hover:border-[#D44545] hover:bg-[#B82828] active:border-[#E05555] active:bg-[#D43535] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-pale"
           initial={reduce ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.95 }}

@@ -129,7 +129,6 @@ export function Gallery() {
         <SectionHeading
           eyebrow="Our story in frames"
           title="Gallery"
-          subtitle="A glimpse into the moments that brought us here."
         />
       </FadeIn>
 

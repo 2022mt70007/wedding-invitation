@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
+import { Cormorant_Garamond, Great_Vibes, Source_Sans_3 } from "next/font/google";
 import { MusicProvider, MusicToggle, WelcomeGate } from "@/components/MusicToggle";
 import { wedding } from "@/lib/wedding";
 import "./globals.css";
@@ -8,6 +8,13 @@ const display = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-display",
+  display: "swap",
+});
+
+const script = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-script",
   display: "swap",
 });
 
@@ -73,7 +80,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={`${display.variable} ${script.variable} ${body.variable}`}>
       <body className="min-h-screen overflow-x-hidden">
         <MusicProvider>
           <WelcomeGate />

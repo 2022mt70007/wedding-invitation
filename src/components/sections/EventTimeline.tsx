@@ -22,12 +22,12 @@ export function EventTimeline() {
       <FadeIn>
         <SectionHeading
           eyebrow="Celebrate with us"
-          title="Wedding Events"
-          subtitle="Two separate celebrations — different times, different venues."
+          title="Wedding Ceremony"
+          subtitle="Join us as we exchange vows and begin our forever."
         />
       </FadeIn>
 
-      <Stagger className="mx-auto mt-14 grid max-w-4xl gap-6 md:grid-cols-2">
+      <Stagger className="mx-auto mt-14 grid max-w-xl gap-6">
         {wedding.events.map((event) => {
           const Icon = iconMap[event.icon];
 

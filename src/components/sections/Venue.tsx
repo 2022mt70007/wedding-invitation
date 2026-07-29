@@ -16,12 +16,12 @@ export function Venue() {
       <FadeIn>
         <SectionHeading
           eyebrow="Where to find us"
-          title="The Venues"
-          subtitle="Each celebration awaits you at its own beautiful setting."
+          title="The Venue"
+          subtitle="We look forward to celebrating with you at this beautiful setting."
         />
       </FadeIn>
 
-      <Stagger className="relative mx-auto mt-14 grid max-w-4xl gap-6 md:grid-cols-2">
+      <Stagger className="relative mx-auto mt-14 grid max-w-xl gap-6">
         {wedding.events.map((event) => (
           <StaggerItem key={event.id}>
             <GlassCard className="flex h-full flex-col px-8 py-11 text-center transition duration-500 hover:shadow-gold sm:px-10">

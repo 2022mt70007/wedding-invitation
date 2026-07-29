@@ -46,6 +46,7 @@ const config: Config = {
       },
       fontFamily: {
         display: ["var(--font-display)", "serif"],
+        script: ["var(--font-script)", "cursive"],
         body: ["var(--font-body)", "sans-serif"],
       },
       backgroundImage: {

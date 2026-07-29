@@ -13,9 +13,6 @@ export function CountdownSection() {
         <p className="font-body text-xs uppercase tracking-[0.28em] text-temple">
           Counting down to forever
         </p>
-        <h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">
-          Until we say I do
-        </h2>
         <Ornament className="mt-5" />
         <div className="mt-10">
           <Countdown />
